@@ -1,0 +1,66 @@
+* {
+  font-family: monospace, Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  box-sizing: border-box;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+canvas {
+  width: 70vw;
+  max-width: 640px;
+  max-height: 640px;
+  border: 1px solid #646464;
+  border-radius: 5px;
+}
+
+.controls {
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.input-button {
+  box-sizing: border-box;
+  font-size: 1em;
+  width: 125px;
+  height: 100%;
+  padding: 5px;
+  background-color: #ebebeb;
+  border: 1px solid #646464;
+  border-radius: 5px;
+  -webkit-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.input-button:hover {
+  background-color: #d1d1d1;
+}
+
+a, a:hover, a:focus, a:active {
+    padding-top: 20px;
+    text-decoration: none;
+    color: rgb(53, 53, 53);
+    font-size: 15px;
+}
