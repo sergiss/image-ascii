@@ -1,6 +1,6 @@
 # image-ascii
 💾 Image to ASCII converter.
-Upload your image and enjoy
+\Upload your image and enjoy ;)
 
 [Live Demo](https://sergiss.github.io/image-ascii/)
 
