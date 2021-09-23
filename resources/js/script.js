@@ -37,8 +37,8 @@ loadImage = function (src) {
 }
 
 handleImage = function (img) {
+  // let ascii = "@#*+=-:·";
   let ascii = "#####********+++++++++=========--------:::::::::..";
-
   let w = 320;
   let h = 320;
   
@@ -59,16 +59,17 @@ handleImage = function (img) {
   let i, j, r, g, b, grayscale, index;
   
   image = "";
-  for (j = 0; j < w >> 1; j++) {
-    for (i = 0; i < h >> 1; i++) {    
-      let off = (j * w + i) << 2;
-      r = data[off];
+  for (i = 0; i < h >> 1; i++) {    
+    for (j = 0; j < w >> 1; j++) {
+      let off = (i * h + j) << 2;
+      r = data[off    ];
       g = data[off + 1];
       b = data[off + 2];
       grayscale = (r + g + b) / 3.0;
-      index = Math.floor((grayscale / 255) * ascii.length);
+      index = Math.floor((grayscale / 255) * (ascii.length - 1));
+      if(index >= ascii.length) console.log("error")
       let char = ascii.charAt(index);
-      ctx1.fillText(char, i * 2, j * 2);
+      ctx1.fillText(char, j << 1, i << 1);
       image += char;
     }
     image += '\n';
