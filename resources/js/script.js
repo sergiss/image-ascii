@@ -35,7 +35,6 @@ loadImage = function (src) {
   };
   img.src = src;
 }
-
 handleImage = function (img) {
   // let ascii = "@#*+=-:·";
   let ascii = "#####********+++++++++=========--------:::::::::..";
