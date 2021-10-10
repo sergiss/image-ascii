@@ -1,6 +1,11 @@
+const DEFAULT_ACII = "#####********+++++++++=========--------:::::::::..";
 var image = "";
-
+var img;
 window.onload = function () {
+
+  let inputASCII = document.querySelector('#ascii');
+  inputASCII.value = DEFAULT_ACII;
+
   let input = document.querySelector("#file");
   input.onchange = function (e) {
     let file = e.target.files[0];
@@ -25,11 +30,14 @@ window.onload = function () {
 
   });
 
-  loadImage("logo.gif");
+  loadImage("./logo.gif");
+  inputASCII.addEventListener("input", ()=> {
+    handleImage(img);
+  });
 }
 
 loadImage = function (src) {
-  let img = document.createElement("img");
+  img = document.createElement("img");
   img.onload = function () {
     handleImage(img);
   };
@@ -37,7 +45,10 @@ loadImage = function (src) {
 }
 handleImage = function (img) {
   // let ascii = "@#*+=-:·";
-  let ascii = "#####********+++++++++=========--------:::::::::..";
+  let ascii = document.querySelector('#ascii').value;
+  if(!ascii || ascii.trim().length === 0) {
+    ascii = DEFAULT_ACII;
+  }
   let w = 320;
   let h = 320;
   
